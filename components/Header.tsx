@@ -3,13 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/services', label: 'Products & Services' },
-  { href: '/vendors', label: 'Vendors' },
-  { href: '/contact', label: 'Contact' },
-];
-
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -32,28 +25,21 @@ export default function Header() {
           {menuOpen ? 'Close' : 'Menu'}
         </button>
 
-        <nav className="primary-nav" aria-label="Primary navigation">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="header-contact" aria-label="Contact information">
+          <div className="contact-item">
+            <span className="contact-label">Phone:</span>
+            <a href="tel:+919876543210">+91 98765 43210</a>
+          </div>
+          <div className="contact-item">
+            <span className="contact-label">Email:</span>
+            <a href="mailto:info@kafgroups.com">info@kafgroups.com</a>
+          </div>
+        </div>
 
-        <Link href="/contact" className="button button-primary nav-cta" onClick={() => setMenuOpen(false)}>
+        <Link href="#contact" className="button button-primary nav-cta" onClick={() => setMenuOpen(false)}>
           Get a Quote
         </Link>
       </div>
-
-      <div className="mobile-nav" aria-hidden={!menuOpen}>
-        {navItems.map((item) => (
-          <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
-            {item.label}
-          </Link>
-        ))}
-      </div>
-
-      {/* TODO: add active link highlighting using usePathname() for current route */}
     </header>
   );
 }

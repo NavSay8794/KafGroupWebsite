@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import ContactForm from '../components/ContactForm';
 import ServiceCard from '../components/ServiceCard';
-import ProductCarousel from '../components/ProductCarousel';
 
 const services = [
   {
@@ -19,6 +18,52 @@ const services = [
     title: 'Cold-chain logistics',
     description: 'Temperature-controlled transport and on-time delivery from farm to vendor or distribution hub.',
   },
+];
+
+const products = [
+  {
+    id: 1,
+    name: 'Banana',
+    emoji: '🍌',
+    description: 'Fresh, golden bananas sourced daily. Perfect for retail, hotels, and wholesale distribution.',
+  },
+  {
+    id: 2,
+    name: 'Green Chillies',
+    emoji: '🌶️',
+    description: 'Vibrant green chillies with optimal freshness. Essential for kitchens and culinary businesses.',
+  },
+  {
+    id: 3,
+    name: 'Pomegranate',
+    emoji: '🍇',
+    description: 'Premium pomegranates packed with antioxidants. Premium export quality available.',
+  },
+  {
+    id: 4,
+    name: 'Onion',
+    emoji: '🧅',
+    description: 'High-quality onions in bulk quantities. Consistent supply for restaurants and vendors.',
+  },
+  {
+    id: 5,
+    name: 'Husk Coconut',
+    emoji: '🥥',
+    description: 'Fresh husk coconuts for export and domestic markets. Premium packaging available.',
+  },
+  {
+    id: 6,
+    name: 'Drumsticks',
+    emoji: '🥬',
+    description: 'Fresh drumstick leaves and pods. Nutritious and in high demand across markets.',
+  },
+];
+
+const exportLocations = [
+  { name: 'Dubai', icon: '🇦🇪', flag: 'UAE' },
+  { name: 'Iran', icon: '🇮🇷', flag: 'Iran' },
+  { name: 'Iraq', icon: '🇮🇶', flag: 'Iraq' },
+  { name: 'Gulf Region', icon: '🌊', flag: 'GCC' },
 ];
 
 const testimonials = [
@@ -47,10 +92,10 @@ export default function HomePage() {
               restaurants, supermarkets and international distributors.
             </p>
             <div className="hero-actions">
-              <Link href="/contact" className="button button-primary">
+              <Link href="#contact" className="button button-primary">
                 Get a Quote
               </Link>
-              <Link href="/services" className="button button-secondary">
+              <Link href="#products" className="button button-secondary">
                 Explore Products & Services
               </Link>
             </div>
@@ -60,7 +105,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          <ProductCarousel />
+          <div className="hero-cover">
+            <div className="cover-placeholder">
+              <p>Cover Image</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -108,13 +157,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section id="products" className="section">
+        <div className="section-inner">
+          <div>
+            <h2>Our Premium Products</h2>
+            <p>KAF Groups offers a carefully curated selection of fresh fruits, vegetables, and specialty products sourced for quality and freshness.</p>
+          </div>
+
+          <div className="product-grid">
+            {products.map((product) => (
+              <article key={product.id} className="product-card">
+                <div className="product-icon" aria-hidden="true">
+                  {product.emoji}
+                </div>
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <Link href="#contact" className="button button-secondary">
+                  Inquire
+                </Link>
+              </article>
+            ))}
+          </div>
+
+          <div className="section-cta">
+            <Link href="#contact" className="button button-primary">
+              Order now
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section id="export" className="section">
         <div className="section-inner">
           <div>
             <h2>Export-ready produce and global logistics</h2>
             <p>
               We support international distributors with phytosanitary-ready packaging, cold-chain handling, and outbound
-              shipment coordination.
+              shipment coordination. Our products reach key markets worldwide.
             </p>
             <div className="section-cards">
               <div className="info-card">
@@ -131,42 +210,17 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="vendors" className="section">
-        <div className="section-inner">
-          <div>
-            <h2>Partnerships for vendors</h2>
-            <p>Flexible programs for hotels, supermarkets, caterers and event teams who rely on consistent fresh inventory.</p>
-          </div>
-          <div className="service-grid">
-            <div className="service-card">
-              <div className="service-icon" aria-hidden="true">
-                🏨
+          <div className="export-locations">
+            {exportLocations.map((loc) => (
+              <div key={loc.name} className="location-card">
+                <div className="location-icon" aria-hidden="true">
+                  {loc.icon}
+                </div>
+                <h3>{loc.name}</h3>
+                <p className="location-code">{loc.flag}</p>
               </div>
-              <h3>Hotels & restaurants</h3>
-              <p>Volume planning, chef-grade produce, and same-day dispatch for busy kitchens.</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon" aria-hidden="true">
-                🛒
-              </div>
-              <h3>Supermarkets & grocery chains</h3>
-              <p>Retail-ready packaging, attractive presentations, and regular replenishment schedules.</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon" aria-hidden="true">
-                🎉
-              </div>
-              <h3>Caterers & event organizers</h3>
-              <p>Reliable order fulfillment for events, banquets, and large-scale catering requirements.</p>
-            </div>
-          </div>
-          <div className="section-cta">
-            <Link href="/contact" className="button button-primary">
-              Register as a Vendor
-            </Link>
+            ))}
           </div>
         </div>
       </section>
