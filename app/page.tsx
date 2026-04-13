@@ -4,19 +4,40 @@ import ServiceCard from '../components/ServiceCard';
 
 const services = [
   {
-    icon: '🥬',
-    title: 'Fresh produce supply',
-    description: 'Daily delivery of premium fruits and vegetables for hotels, restaurants, supermarkets and caterers.',
+    icon: '🌾',
+    title: 'Procuring',
+    description: 'Source the finest fresh produce directly from verified farmers and growers across regions.',
+    step: 1,
   },
   {
     icon: '📦',
-    title: 'Custom packaging',
-    description: 'Retail, hospitality, and export-ready packaging designed for freshness and shelf impact.',
+    title: 'Packing',
+    description: 'Expert packing in food-safe, hygienic containers designed to maintain freshness and quality.',
+    step: 2,
   },
   {
     icon: '❄️',
-    title: 'Cold-chain logistics',
-    description: 'Temperature-controlled transport and on-time delivery from farm to vendor or distribution hub.',
+    title: 'Precooling',
+    description: 'Initial rapid cooling to remove field heat and prepare produce for optimal temperature retention.',
+    step: 3,
+  },
+  {
+    icon: '🌡️',
+    title: 'Cooling',
+    description: 'Precise temperature-controlled storage facilities maintaining ideal conditions for each product.',
+    step: 4,
+  },
+  {
+    icon: '📫',
+    title: 'Container Stuffing',
+    description: 'Strategic loading and securing of products into export containers with proper ventilation.',
+    step: 5,
+  },
+  {
+    icon: '🚛',
+    title: 'Shipping & Logistics',
+    description: 'End-to-end cold-chain logistics with real-time monitoring from warehouse to final destination.',
+    step: 6,
   },
 ];
 
@@ -146,12 +167,12 @@ export default function HomePage() {
       <section id="services" className="section">
         <div className="section-inner">
           <div>
-            <h2>Services for supply and packaging</h2>
-            <p>Our service portfolio is built for businesses that need fresh produce and premium packaging solutions.</p>
+            <h2>Our Complete Supply & Processing Workflow</h2>
+            <p>From farm to export, our integrated process ensures premium quality at every stage.</p>
           </div>
           <div className="service-grid">
             {services.map((service) => (
-              <ServiceCard key={service.title} icon={service.icon} title={service.title} description={service.description} />
+              <ServiceCard key={service.title} icon={service.icon} title={service.title} description={service.description} step={service.step} />
             ))}
           </div>
         </div>

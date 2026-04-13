@@ -266,6 +266,17 @@ main {
   box-shadow: var(--color-shadow);
 }
 
+.service-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(26, 26, 26, 0.15);
+}
+
 .service-icon {
   width: 3rem;
   height: 3rem;
@@ -275,6 +286,35 @@ main {
   border-radius: 16px;
   background: var(--color-primary-soft);
   font-size: 1.4rem;
+}
+
+.service-step {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+  animation: slideInStep 0.6s ease-out;
+}
+
+@keyframes slideInStep {
+  from {
+    transform: translate(20px, -20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
 }
 
 .card-flag {
@@ -698,6 +738,10 @@ main {
 
   .mobile-nav a {
     color: var(--color-secondary);
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
