@@ -306,6 +306,190 @@ main {
   animation: slideInStep 0.6s ease-out;
 }
 
+/* About Page Styles */
+.about-hero {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.05));
+  border-bottom: 2px solid var(--color-border);
+}
+
+.about-header {
+  max-width: 720px;
+}
+
+.about-header h1 {
+  margin-top: 1rem;
+  font-size: clamp(2.2rem, 2rem + 1vw, 3.2rem);
+  line-height: 1.1;
+  color: var(--color-secondary);
+}
+
+.about-tagline {
+  font-size: 1.1rem;
+  color: #525252;
+  margin-top: 1rem;
+}
+
+.about-content {
+  max-width: 800px;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3a3a3a;
+  margin-bottom: 1.5rem;
+}
+
+.about-content strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.specialty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 0;
+}
+
+.specialty-card {
+  padding: 2rem;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(26, 26, 26, 0.05);
+}
+
+.specialty-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(26, 26, 26, 0.1);
+}
+
+.specialty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.specialty-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  color: var(--color-secondary);
+}
+
+.specialty-card p {
+  margin: 0;
+  color: #525252;
+  font-size: 0.95rem;
+}
+
+.commitment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.commitment-box {
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(255, 255, 255, 0.6));
+  border-left: 4px solid var(--color-primary);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.commitment-box:hover {
+  transform: translateX(8px);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(255, 255, 255, 0.8));
+}
+
+.commitment-box h3 {
+  margin: 0 0 0.75rem;
+  color: var(--color-secondary);
+  font-size: 1.1rem;
+}
+
+.commitment-box p {
+  margin: 0;
+  color: #3a3a3a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.about-why {
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.05), rgba(217, 119, 6, 0.03));
+}
+
+.why-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.why-item {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.why-item:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.1);
+}
+
+.why-number {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+.why-item h4 {
+  margin: 0 0 0.5rem;
+  color: var(--color-secondary);
+  font-size: 1.05rem;
+}
+
+.why-item p {
+  margin: 0;
+  color: #525252;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.about-cta {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.about-cta h2 {
+  font-size: clamp(1.8rem, 1.6rem + 0.6vw, 2.4rem);
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+}
+
+.about-cta p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #525252;
+  font-size: 1.05rem;
+}
+
 @keyframes slideInStep {
   from {
     transform: translate(20px, -20px);
@@ -815,6 +999,29 @@ main {
 
   .carousel-wrapper {
     gap: 0.5rem;
+  }
+
+  .about-header h1 {
+    font-size: clamp(1.8rem, 1.6rem + 0.6vw, 2.4rem);
+  }
+
+  .specialty-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .commitment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .why-number {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
   }
 }
 
