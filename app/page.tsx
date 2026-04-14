@@ -1,6 +1,70 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import ContactForm from '../components/ContactForm';
 import ServiceCard from '../components/ServiceCard';
+
+const products = [
+  {
+    id: 1,
+    name: 'Banana',
+    image: '/images/Banana.png',
+    description: 'Fresh, golden bananas sourced daily. Perfect for retail, hotels, and wholesale distribution.',
+  },
+  {
+    id: 2,
+    name: 'Green Chillies',
+    image: '/images/GreenChillies.png',
+    description: 'Vibrant green chillies with optimal freshness. Essential for kitchens and culinary businesses.',
+  },
+  {
+    id: 3,
+    name: 'Grapes',
+    image: '/images/Grapes.png',
+    description: 'Sweet, juicy grapes meeting international export standards.',
+  },
+  {
+    id: 4,
+    name: 'Onions',
+    image: '/images/Onions.png',
+    description: 'High-quality onions in bulk quantities. Consistent supply for restaurants and vendors.',
+  },
+  {
+    id: 5,
+    name: 'Husk Coconut',
+    image: '/images/Husk Coconut.png',
+    description: 'Fresh husk coconuts for export and domestic markets. Premium packaging available.',
+  },
+  {
+    id: 6,
+    name: 'Drumsticks',
+    image: '/images/Drumsticks.jfif.jpeg',
+    description: 'Fresh drumstick leaves and pods. Nutritious and in high demand across markets.',
+  },
+  {
+    id: 7,
+    name: 'Pomegranate',
+    image: '/images/Pomegranate.png',
+    description: 'Premium pomegranates packed with antioxidants. Premium export quality available.',
+  },
+  {
+    id: 8,
+    name: 'Tomatoes',
+    image: '/images/Tomatoes.png',
+    description: 'Farm-fresh tomatoes packed with flavor and perfect ripeness.',
+  },
+  {
+    id: 9,
+    name: 'Garlic & Ginger',
+    image: '/images/Garlic And Ginger.png',
+    description: 'Premium quality garlic and ginger sourced for culinary excellence.',
+  },
+  {
+    id: 10,
+    name: 'Rice',
+    image: '/images/Rice.png',
+    description: 'High-quality rice for wholesale and export distribution.',
+  },
+];
 
 const services = [
   {
@@ -41,45 +105,6 @@ const services = [
   },
 ];
 
-const products = [
-  {
-    id: 1,
-    name: 'Banana',
-    emoji: '🍌',
-    description: 'Fresh, golden bananas sourced daily. Perfect for retail, hotels, and wholesale distribution.',
-  },
-  {
-    id: 2,
-    name: 'Green Chillies',
-    emoji: '🌶️',
-    description: 'Vibrant green chillies with optimal freshness. Essential for kitchens and culinary businesses.',
-  },
-  {
-    id: 3,
-    name: 'Pomegranate',
-    emoji: '🍇',
-    description: 'Premium pomegranates packed with antioxidants. Premium export quality available.',
-  },
-  {
-    id: 4,
-    name: 'Onion',
-    emoji: '🧅',
-    description: 'High-quality onions in bulk quantities. Consistent supply for restaurants and vendors.',
-  },
-  {
-    id: 5,
-    name: 'Husk Coconut',
-    emoji: '🥥',
-    description: 'Fresh husk coconuts for export and domestic markets. Premium packaging available.',
-  },
-  {
-    id: 6,
-    name: 'Drumsticks',
-    emoji: '🥬',
-    description: 'Fresh drumstick leaves and pods. Nutritious and in high demand across markets.',
-  },
-];
-
 const exportLocations = [
   { name: 'Dubai', icon: '🇦🇪', flag: 'UAE' },
   { name: 'Iran', icon: '🇮🇷', flag: 'Iran' },
@@ -103,6 +128,22 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
+      {/* Cover Image Section */}
+      <section className="hero-cover-section">
+        <div className="hero-cover-wrapper">
+          <Image
+            src="/images/Cover.jpeg"
+            alt="KAF Groups Premium Produce"
+            width={1200}
+            height={400}
+            priority
+            quality={90}
+            className="cover-image"
+          />
+        </div>
+      </section>
+
+      {/* Hero Section */}
       <section className="hero">
         <div className="hero-inner">
           <div className="hero-copy">
@@ -113,11 +154,8 @@ export default function HomePage() {
               restaurants, supermarkets and international distributors.
             </p>
             <div className="hero-actions">
-              <Link href="#contact" className="button button-primary">
-                Get a Quote
-              </Link>
               <Link href="#products" className="button button-secondary">
-                Explore Products & Services
+                Explore Products
               </Link>
             </div>
             <div className="hero-features">
@@ -125,59 +163,10 @@ export default function HomePage() {
               <div className="feature-pill">Export-ready packaging & cold-chain logistics</div>
             </div>
           </div>
-
-          <div className="hero-cover">
-            <div className="cover-placeholder">
-              <p>Cover Image</p>
-            </div>
-          </div>
         </div>
       </section>
 
-      <section id="about" className="section">
-        <div className="section-inner">
-          <div>
-            <h2>Why KAF Groups?</h2>
-            <p>
-              We are a Mumbai-based supplier dedicated to connecting fresh growers with hospitality businesses and
-              retailers. Our expertise is in consistent quality, accurate packing, and logistics that protect every shipment.
-            </p>
-            <p>
-              Vendors count on us for dependable fruits and vegetables, reliable order fulfillment, and packaging designed
-              for freshness and food-safety compliance.
-            </p>
-          </div>
-          <div className="section-cards">
-            <div className="info-card">
-              <h3>Who we serve</h3>
-              <p>Hotels, restaurants, supermarkets, caterers and global distributors who need dependable produce supply.</p>
-            </div>
-            <div className="info-card">
-              <h3>How we support you</h3>
-              <p>Custom scheduling, product sourcing, and verified cold-chain logistics for timely arrivals.</p>
-            </div>
-            <div className="info-card">
-              <h3>Why we stand out</h3>
-              <p>KAF Groups blends fresh sourcing, food-safe packaging, and actionable vendor support every step of the way.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" className="section">
-        <div className="section-inner">
-          <div>
-            <h2>Our Complete Supply & Processing Workflow</h2>
-            <p>From farm to export, our integrated process ensures premium quality at every stage.</p>
-          </div>
-          <div className="service-grid">
-            {services.map((service) => (
-              <ServiceCard key={service.title} icon={service.icon} title={service.title} description={service.description} step={service.step} />
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* Products Section */}
       <section id="products" className="section">
         <div className="section-inner">
           <div>
@@ -188,8 +177,15 @@ export default function HomePage() {
           <div className="product-grid">
             {products.map((product) => (
               <article key={product.id} className="product-card">
-                <div className="product-icon" aria-hidden="true">
-                  {product.emoji}
+                <div className="product-image-wrapper">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={300}
+                    height={300}
+                    quality={85}
+                    className="product-image"
+                  />
                 </div>
                 <h3>{product.name}</h3>
                 <p>{product.description}</p>
@@ -199,11 +195,20 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="section-cta">
-            <Link href="#contact" className="button button-primary">
-              Order now
-            </Link>
+      {/* Services Section */}
+      <section id="services" className="section">
+        <div className="section-inner">
+          <div>
+            <h2>Our Complete Supply & Processing Workflow</h2>
+            <p>From farm to export, our integrated process ensures premium quality at every stage.</p>
+          </div>
+          <div className="service-grid">
+            {services.map((service) => (
+              <ServiceCard key={service.title} icon={service.icon} title={service.title} description={service.description} step={service.step} />
+            ))}
           </div>
         </div>
       </section>
@@ -246,7 +251,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      {/* <section className="section">
         <div className="section-inner">
           <div>
             <h2>Trusted by businesses that value freshness</h2>
@@ -267,8 +272,9 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
+      {/* Contact Section */}
       <section id="contact" className="section">
         <div className="section-inner contact-layout">
           <div className="contact-panel">

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,9 +11,15 @@ export default function Header() {
     <header className={menuOpen ? 'site-header nav-open' : 'site-header'}>
       <div className="header-inner">
         <Link href="/" className="brand" onClick={() => setMenuOpen(false)}>
-          <span className="brand-mark" aria-hidden="true">
-            🥗
-          </span>
+          <div className="brand-logo">
+            <Image
+              src="/images/logo.jpeg"
+              alt="KAF Groups Logo"
+              width={40}
+              height={40}
+              className="logo-image"
+            />
+          </div>
           KAF Groups
         </Link>
 
