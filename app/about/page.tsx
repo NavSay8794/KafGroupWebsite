@@ -1,4 +1,18 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
+const products = [
+  { id: 1, name: 'Banana', image: '/images/Banana.png' },
+  { id: 2, name: 'Green Chillies', image: '/images/GreenChillies.png' },
+  { id: 3, name: 'Grapes', image: '/images/Grapes.png' },
+  { id: 4, name: 'Onions', image: '/images/Onions.png' },
+  { id: 5, name: 'Husk Coconut', image: '/images/Husk Coconut.png' },
+  { id: 6, name: 'Drumsticks', image: '/images/Drumsticks.jfif.jpeg' },
+  { id: 7, name: 'Pomegranate', image: '/images/Pomegranate.png' },
+  { id: 8, name: 'Tomatoes', image: '/images/Tomatoes.png' },
+  { id: 9, name: 'Garlic & Ginger', image: '/images/Garlic And Ginger.png' },
+  { id: 10, name: 'Rice', image: '/images/Rice.png' },
+];
 
 export default function AboutPage() {
   return (
@@ -94,6 +108,30 @@ export default function AboutPage() {
               <h3>🤝 Trusted Partnership</h3>
               <p>Our exceptional reputation stems from the dedication of our team and the incomparable quality of our products and services. We strive to be your preferred agro-product partner.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Products */}
+      <section className="section">
+        <div className="section-inner">
+          <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Product Range</h2>
+          <div className="product-grid">
+            {products.map((product) => (
+              <article key={product.id} className="product-card">
+                <div className="product-image-wrapper">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={300}
+                    height={300}
+                    quality={85}
+                    className="product-image"
+                  />
+                </div>
+                <h3>{product.name}</h3>
+              </article>
+            ))}
           </div>
         </div>
       </section>

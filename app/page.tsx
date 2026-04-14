@@ -188,7 +188,6 @@ export default function HomePage() {
                   />
                 </div>
                 <h3>{product.name}</h3>
-                <p>{product.description}</p>
                 <Link href="#contact" className="button button-secondary">
                   Inquire
                 </Link>
