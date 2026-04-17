@@ -8,18 +8,18 @@ export default function Footer() {
           <p className="footer-copy">
             KAF Groups • Premium fresh produce, quality packaging & reliable distribution worldwide.
           </p>
-          <p className="footer-copy">123 Marine Drive, Mumbai, Maharashtra • +91 99227 86578 • kafgroups21@gmail.com</p>
+          <p className="footer-copy">Green Lawns , Bungalow No 21, Sarda Circle, Nashik-Poona Road, Nashik, Maharashtra, 422001 • +91 99227 86578 • kafgroups21@gmail.com</p>
         </div>
 
         <div className="social-links">
           <a href="https://linkedin.com" aria-label="LinkedIn">
             LinkedIn
           </a>
-          <a href="https://instagram.com" aria-label="Instagram">
+          <a href="https://instagram.com/kafgroups?igsh=MTRkbDFzZWgxdGt1dg==" aria-label="Instagram">
             Instagram
           </a>
-          <a href="https://wa.me/919922786578" aria-label="WhatsApp">
-            WhatsApp
+          <a href="https://facebook.com/share/1JPj48vWSS" aria-label="Facebook">
+            Facebook
           </a>
         </div>
       </div>

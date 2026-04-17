@@ -24,7 +24,7 @@ export default function AboutPage() {
             <p className="card-flag">Our Legacy</p>
             <h1>We Rank 1st in Supplying & Service Providing to Indian Exporters</h1>
             <p className="about-tagline">
-              Seven years of excellence in sourcing, packing, and delivering premium agricultural products across India and beyond.
+              Working Since 2012 in sourcing, packing, and delivering premium agricultural products across India and beyond.
             </p>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function AboutPage() {
             <div className="why-item">
               <span className="why-number">1</span>
               <div>
-                <h4>7 Years of Excellence</h4>
+                <h4>Working Since 2012</h4>
                 <p>Proven track record in agricultural commodity trading and export services.</p>
               </div>
             </div>
