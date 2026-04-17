@@ -36,7 +36,7 @@ export default function AboutPage() {
           <div className="about-content">
             <h2>Who We Are</h2>
             <p>
-              <strong>KHAN AL FAISAL</strong> is a Nashik, India-based commodity trading company with a seven-year track record of excellence. 
+              <strong>KAF Group</strong> is a Nashik, India-based commodity trading company with a seven-year track record of excellence. 
               We've built strong relationships with major brands and established offices in Nashik and other strategic locations across India.
             </p>
             <p>
@@ -48,41 +48,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Specialties */}
+      {/* Our Products */}
       <section className="section">
         <div className="section-inner">
-          <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>What We Specialize In</h2>
-          <div className="specialty-grid">
-            <div className="specialty-card">
-              <div className="specialty-icon">🧅</div>
-              <h3>Onions</h3>
-              <p>Premium quality onions sourced directly from our farms and trusted partners.</p>
-            </div>
-            <div className="specialty-card">
-              <div className="specialty-icon">🍌</div>
-              <h3>Bananas</h3>
-              <p>Golden, fresh bananas with consistent quality for wholesale and export.</p>
-            </div>
-            <div className="specialty-card">
-              <div className="specialty-icon">🍅</div>
-              <h3>Tomatoes</h3>
-              <p>Farm-fresh tomatoes packed with flavor and perfect ripeness.</p>
-            </div>
-            <div className="specialty-card">
-              <div className="specialty-icon">🍇</div>
-              <h3>Grapes</h3>
-              <p>Sweet, juicy grapes meeting international export standards.</p>
-            </div>
-            <div className="specialty-card">
-              <div className="specialty-icon">🌶️</div>
-              <h3>Green Chillies</h3>
-              <p>Vibrant green chillies with optimal freshness and pungency.</p>
-            </div>
-            <div className="specialty-card">
-              <div className="specialty-icon">🍇</div>
-              <h3>Pomegranates</h3>
-              <p>Premium pomegranates packed with antioxidants and export quality.</p>
-            </div>
+          <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Product Range</h2>
+          <div className="product-grid">
+            {products.map((product) => (
+              <article key={product.id} className="product-card">
+                <div className="product-image-wrapper">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={300}
+                    height={300}
+                    quality={85}
+                    className="product-image"
+                  />
+                </div>
+                <h3>{product.name}</h3>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -112,34 +97,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Products */}
-      <section className="section">
-        <div className="section-inner">
-          <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Product Range</h2>
-          <div className="product-grid">
-            {products.map((product) => (
-              <article key={product.id} className="product-card">
-                <div className="product-image-wrapper">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    width={300}
-                    height={300}
-                    quality={85}
-                    className="product-image"
-                  />
-                </div>
-                <h3>{product.name}</h3>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Why Choose Us */}
       <section className="section about-why">
         <div className="section-inner">
-          <h2>Why Choose KHAN AL FAISAL</h2>
+          <h2>Why Choose KAF Group</h2>
           <div className="why-list">
             <div className="why-item">
               <span className="why-number">1</span>
