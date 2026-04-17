@@ -13,6 +13,8 @@ const defaultForm = {
 export default function ContactForm() {
   const [formData, setFormData] = useState(defaultForm);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // Example client-side hook for focus or analytics.
@@ -23,11 +25,38 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
-    setFormData(defaultForm);
-    console.log('Lead captured', formData);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/send-inquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send inquiry');
+      }
+
+      setSubmitted(true);
+      setFormData(defaultForm);
+      console.log('Inquiry sent successfully', formData);
+
+      // Clear success message after 5 seconds
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'An error occurred';
+      setError(errorMessage);
+      console.error('Error sending inquiry:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -64,11 +93,12 @@ export default function ContactForm() {
         <textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Share your order size or export inquiry" required />
       </div>
 
-      <button type="submit" className="button button-primary">
-        Send inquiry
+      <button type="submit" className="button button-primary" disabled={loading}>
+        {loading ? 'Sending...' : 'Send inquiry'}
       </button>
 
-      {submitted && <p className="form-success">Thank you! We’ll be in touch shortly.</p>}
+      {submitted && <p className="form-success">Thank you! We'll be in touch shortly.</p>}
+      {error && <p className="form-error">{error}</p>}
     </form>
   );
 }

@@ -233,6 +233,16 @@ main {
   color: white;
 }
 
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.button-primary:disabled {
+  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.2);
+}
+
 .hero {
   padding: 4rem 0 2rem;
 }
@@ -655,6 +665,15 @@ main {
   border: 1px solid #fcd34d;
 }
 
+.form-error {
+  margin-top: 1rem;
+  padding: 1rem 1rem 0.95rem;
+  border-radius: 16px;
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
 .section-cta {
   margin-top: 1.75rem;
 }
@@ -836,7 +855,7 @@ main {
   height: auto;
   min-height: 280px;
   max-height: 400px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 16px;
 }
 

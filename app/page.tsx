@@ -147,7 +147,6 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-inner">
           <div className="hero-copy">
-            <p className="card-flag">Premium produce supply & global distribution</p>
             <h1>Fresh fruits and vegetables, packaged for vendors and global markets.</h1>
             <p>
               KAF Groups delivers premium fresh produce and export-ready packaging with cold-chain logistics for hotels,
@@ -188,9 +187,6 @@ export default function HomePage() {
                   />
                 </div>
                 <h3>{product.name}</h3>
-                <Link href="#contact" className="button button-secondary">
-                  Inquire
-                </Link>
               </article>
             ))}
           </div>
