@@ -12,9 +12,6 @@ export default function Footer() {
         </div>
 
         <div className="social-links">
-          <a href="https://linkedin.com" aria-label="LinkedIn">
-            LinkedIn
-          </a>
           <a href="https://instagram.com/kafgroups?igsh=MTRkbDFzZWgxdGt1dg==" aria-label="Instagram">
             Instagram
           </a>

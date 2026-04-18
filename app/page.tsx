@@ -156,10 +156,6 @@ export default function HomePage() {
                 Explore Products
               </Link>
             </div>
-            <div className="hero-features">
-              <div className="feature-pill">Fresh fruits & vegetables, daily supply</div>
-              <div className="feature-pill">Export-ready packaging & cold-chain logistics</div>
-            </div>
           </div>
         </div>
       </section>
