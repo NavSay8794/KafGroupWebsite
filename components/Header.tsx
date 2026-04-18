@@ -31,11 +31,11 @@ export default function Header() {
         >
           {menuOpen ? 'Close' : 'Menu'}
         </button>
-{/* 
+
         <nav className="primary-nav" aria-label="Primary navigation">
           <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link href="/about" onClick={() => setMenuOpen(false)}>About</Link>
-        </nav> */}
+        </nav>
 
         <div className="header-contact" aria-label="Contact information">
           <div className="contact-item">
