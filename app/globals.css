@@ -249,6 +249,8 @@ main {
 
 .hero-copy {
   max-width: 620px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .hero-copy h1 {
@@ -268,6 +270,7 @@ main {
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: center;
 }
 
 .hero-features {
@@ -289,9 +292,10 @@ main {
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
   align-items: center;
+  justify-items: center;
 }
 
 .hero-carousel-wrapper {
