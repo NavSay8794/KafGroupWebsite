@@ -164,7 +164,7 @@ export default function HomePage() {
       <section id="products" className="section">
         <div className="section-inner">
           <div>
-            <h2>Our Premium Products</h2>
+            <h2>Our Export-Quality Fresh Fruits and Vegetables</h2>
             <p>KAF Groups offers a carefully curated selection of fresh fruits, vegetables, and specialty products sourced for quality and freshness.</p>
           </div>
 
@@ -206,7 +206,7 @@ export default function HomePage() {
       <section id="export" className="section">
         <div className="section-inner">
           <div>
-            <h2>Export-ready produce and global logistics</h2>
+            <h2>Export-Quality Fresh Fruits and Vegetables</h2>
             <p>
               We support international distributors with phytosanitary-ready packaging, cold-chain handling, and outbound
               shipment coordination. Our products reach key markets worldwide.
