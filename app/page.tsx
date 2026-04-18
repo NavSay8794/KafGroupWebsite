@@ -147,7 +147,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-inner">
           <div className="hero-copy">
-            <h1>Premium export quality fresh fruits and vegetables, packaged for vendors and global markets.</h1>
+            <h1>Premium Export Quality Fresh Fruits and Vegetables, Packaged For Vendors And Global Markets.</h1>
             <p>
               KAF Trading Company working since 2012 and delivering premium export quality fresh fruits and vegetables with cold-chain logistics for Indian exporters and international distributors.
             </p>
