@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ContactForm from '../components/ContactForm';
 import ServiceCard from '../components/ServiceCard';
+import CoverCarousel from '../components/CoverCarousel';
 
 const products = [
   {
@@ -63,6 +64,18 @@ const products = [
     name: 'Rice',
     image: '/images/Rice.png',
     description: 'High-quality rice for wholesale and export distribution.',
+  },
+  {
+    id: 11,
+    name: 'Suran',
+    image: '/images/Suran.png',
+    description: 'Fresh suran (elephant foot yam) sourced for culinary and medicinal use.',
+  },
+  {
+    id: 12,
+    name: 'Vellary',
+    image: '/images/Vellary.png',
+    description: 'Premium vellary (pumpkin variety) perfect for export and local markets.',
   },
 ];
 
@@ -128,20 +141,8 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
-      {/* Cover Image Section */}
-      <section className="hero-cover-section">
-        <div className="hero-cover-wrapper">
-          <Image
-            src="/images/Cover.jpeg"
-            alt="KAF Groups Premium Produce"
-            width={1200}
-            height={400}
-            priority
-            quality={90}
-            className="cover-image"
-          />
-        </div>
-      </section>
+      {/* Cover Carousel Section */}
+      <CoverCarousel />
 
       {/* Hero Section */}
       <section className="hero">
