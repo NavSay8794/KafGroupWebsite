@@ -17,12 +17,12 @@ const coverImages: CoverImage[] = [
   },
   {
     id: 2,
-    src: '/images/Cover4.jpeg',
+    src: '/images/Cover 4.png',
     alt: 'KAF Groups Premium Produce - Cover 4',
   },
   {
     id: 3,
-    src: '/images/Cover5.jpeg',
+    src: '/images/Cover 5.png',
     alt: 'KAF Groups Premium Produce - Cover 5',
   },
 ];
