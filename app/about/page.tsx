@@ -36,7 +36,7 @@ export default function AboutPage() {
           <div className="about-content">
             <h2>Who We Are</h2>
             <p>
-              <strong>KAF Group</strong> is a Nashik, India-based commodity trading company with a seven-year track record of excellence. 
+              <strong>KAF Group</strong> is a Nashik, India-based commodity trading company with a fourteen-year track record of excellence. 
               We've built strong relationships with major brands and established offices in Nashik and other strategic locations across India.
             </p>
             <p>
