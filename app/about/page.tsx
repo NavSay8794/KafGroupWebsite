@@ -12,6 +12,8 @@ const products = [
   { id: 8, name: 'Tomatoes', image: '/images/Tomatoes.png' },
   { id: 9, name: 'Garlic & Ginger', image: '/images/Garlic And Ginger.png' },
   { id: 10, name: 'Rice', image: '/images/Rice.png' },
+  { id: 11, name: 'Suran', image: '/images/Suran.png' },
+  { id: 12, name: 'Vellary', image: '/images/Vellary.png' },
 ];
 
 export default function AboutPage() {
