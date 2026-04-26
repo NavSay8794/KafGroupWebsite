@@ -38,7 +38,7 @@ const products = [
   {
     id: 6,
     name: 'Drumsticks',
-    image: '/images/Drumsticks.jfif.jpeg',
+    image: '/images/Drumsticks.png',
     description: 'Fresh drumstick leaves and pods. Nutritious and in high demand across markets.',
   },
   {
