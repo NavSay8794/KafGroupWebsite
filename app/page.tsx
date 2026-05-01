@@ -226,9 +226,14 @@ export default function HomePage() {
                     <td>{item.name}</td>
                     <td>{item.netWeight}</td>
                     <td>
-                      <Link href="#contact" className="rate-link">
+                      <a 
+                        href={`https://wa.me/919922786578?text=Hi%20I%20need%20pricing%20for%20${encodeURIComponent(item.name)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rate-link"
+                      >
                         {item.rate}
-                      </Link>
+                      </a>
                     </td>
                   </tr>
                 ))}
