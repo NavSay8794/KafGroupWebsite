@@ -79,6 +79,20 @@ const products = [
   },
 ];
 
+const rateChart = [
+  { name: 'Green Chillies', netWeight: '3.8 Kg', rate: 'Contact for pricing' },
+  { name: 'Lemon', netWeight: '6.5 Kg', rate: 'Contact for pricing' },
+  { name: 'Tomatoes', netWeight: '6.5 Kg', rate: 'Contact for pricing' },
+  { name: 'Pomegranate', netWeight: '2.5 Kg', rate: 'Contact for pricing' },
+  { name: 'Drumsticks', netWeight: '4 Kg', rate: 'Contact for pricing' },
+  { name: 'Ginger', netWeight: '4 Kg', rate: 'Contact for pricing' },
+  { name: 'Vellary', netWeight: '5 Kg', rate: 'Contact for pricing' },
+  { name: 'Onions', netWeight: '4 Kg', rate: 'Contact for pricing' },
+  { name: 'Suran', netWeight: '10 Kg', rate: 'Contact for pricing' },
+  { name: 'Garlic & Ginger', netWeight: '13 Kg', rate: 'Contact for pricing' },
+  { name: 'Banana', netWeight: '13 Kg', rate: 'Contact for pricing' },
+];
+
 const services = [
   {
     icon: '🌾',
@@ -185,6 +199,41 @@ export default function HomePage() {
                 <h3>{product.name}</h3>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Rate Chart Section */}
+      <section id="rates" className="section">
+        <div className="section-inner">
+          <div>
+            <h2>Product Rate Chart</h2>
+            <p>View our competitive rates for bulk orders and wholesale distribution.</p>
+          </div>
+
+          <div className="rate-chart-wrapper">
+            <table className="rate-chart">
+              <thead>
+                <tr>
+                  <th>Item Name</th>
+                  <th>Net Weight (Box)</th>
+                  <th>Rate (Per Order)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rateChart.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.name}</td>
+                    <td>{item.netWeight}</td>
+                    <td>
+                      <Link href="#contact" className="rate-link">
+                        {item.rate}
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

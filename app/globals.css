@@ -818,6 +818,62 @@ main {
   box-shadow: var(--color-shadow);
 }
 
+/* Rate Chart Styles */
+.rate-chart-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 2rem;
+}
+
+.rate-chart {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--color-shadow);
+}
+
+.rate-chart thead {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+}
+
+.rate-chart th {
+  padding: 1.25rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+.rate-chart td {
+  padding: 1.25rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+
+.rate-chart tbody tr:nth-child(even) {
+  background: rgba(255, 140, 0, 0.02);
+}
+
+.rate-chart tbody tr:hover {
+  background: rgba(255, 140, 0, 0.06);
+}
+
+.rate-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.rate-link:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
 .location-icon {
   width: 3.5rem;
   height: 3.5rem;
@@ -1246,6 +1302,16 @@ main {
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1rem;
+  }
+
+  .rate-chart th,
+  .rate-chart td {
+    padding: 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  .rate-chart th {
+    font-size: 0.8rem;
   }
 }
 
