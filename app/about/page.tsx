@@ -7,7 +7,7 @@ const products = [
   { id: 3, name: 'Grapes', image: '/images/Grapes.jpg' },
   { id: 4, name: 'Onions', image: '/images/Onions.png' },
   { id: 5, name: 'Husk Coconut', image: '/images/Husk Coconut.png' },
-  { id: 6, name: 'Drumsticks', image: '/images/Drumsticks.jfif.jpeg' },
+  { id: 6, name: 'Drumsticks', image: '/images/Drumsticks.png' },
   { id: 7, name: 'Pomegranate', image: '/images/Pomegranate.png' },
   { id: 8, name: 'Tomatoes', image: '/images/Tomatoes.png' },
   { id: 9, name: 'Garlic & Ginger', image: '/images/Garlic And Ginger.png' },
