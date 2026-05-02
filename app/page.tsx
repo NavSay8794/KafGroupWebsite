@@ -20,7 +20,7 @@ const products = [
   {
     id: 3,
     name: 'Grapes',
-    image: '/images/Grapes.png',
+    image: '/images/Grapes.jpg',
     description: 'Sweet, juicy grapes meeting international export standards.',
   },
   {

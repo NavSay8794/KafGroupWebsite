@@ -4,7 +4,7 @@ import Image from 'next/image';
 const products = [
   { id: 1, name: 'Banana', image: '/images/Banana.png' },
   { id: 2, name: 'Green Chillies', image: '/images/GreenChillies.png' },
-  { id: 3, name: 'Grapes', image: '/images/Grapes.png' },
+  { id: 3, name: 'Grapes', image: '/images/Grapes.jpg' },
   { id: 4, name: 'Onions', image: '/images/Onions.png' },
   { id: 5, name: 'Husk Coconut', image: '/images/Husk Coconut.png' },
   { id: 6, name: 'Drumsticks', image: '/images/Drumsticks.jfif.jpeg' },
