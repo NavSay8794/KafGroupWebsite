@@ -16,19 +16,25 @@ export async function POST(request: Request) {
     }
 
     // Check if Resend API key is configured
-    if (!resend) {
-      console.warn('RESEND_API_KEY not configured. Email will not be sent.');
-      // For now, just return success but don't actually send
-      // In production, you should configure the RESEND_API_KEY environment variable
+    if (!apiKey) {
+      console.error('RESEND_API_KEY not configured');
       return Response.json(
-        { success: true, message: 'Inquiry received (email service not configured)' },
-        { status: 200 }
+        { error: 'Email service not configured on server' },
+        { status: 500 }
       );
     }
 
-    // Send email to KAF Groups
+    if (!resend) {
+      console.error('Failed to initialize Resend client');
+      return Response.json(
+        { error: 'Email service initialization failed' },
+        { status: 500 }
+      );
+    }
+
+    // Send email to KAF Groups (use noreply@resend.dev as fallback sender)
     const result = await resend.emails.send({
-      from: 'inquiries@kafgroups.com',
+      from: 'noreply@resend.dev',
       to: 'kafgroups21@gmail.com',
       subject: `New Inquiry from ${name}`,
       html: `
@@ -46,7 +52,7 @@ export async function POST(request: Request) {
     if (result.error) {
       console.error('Resend error:', result.error);
       return Response.json(
-        { error: 'Failed to send email' },
+        { error: `Failed to send email: ${result.error.message}` },
         { status: 500 }
       );
     }
@@ -57,8 +63,9 @@ export async function POST(request: Request) {
     );
   } catch (error) {
     console.error('Error sending inquiry:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     return Response.json(
-      { error: 'Internal server error' },
+      { error: `Internal server error: ${errorMessage}` },
       { status: 500 }
     );
   }
