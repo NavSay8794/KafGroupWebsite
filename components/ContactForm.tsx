@@ -10,11 +10,11 @@ const defaultForm = {
   interest: 'Supply',
 };
 
+const KAF_EMAIL = 'kafgroups21@gmail.com';
+
 export default function ContactForm() {
   const [formData, setFormData] = useState(defaultForm);
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // Example client-side hook for focus or analytics.
@@ -25,44 +25,47 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setLoading(true);
-    setError(null);
 
-    try {
-      const response = await fetch('/api/send-inquiry', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to send inquiry');
-      }
-
-      setSubmitted(true);
-      setFormData(defaultForm);
-      console.log('Inquiry sent successfully', formData);
-
-      // Clear success message after 5 seconds
-      setTimeout(() => setSubmitted(false), 5000);
-    } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'An error occurred';
-      setError(errorMessage);
-      console.error('Error sending inquiry:', err);
-    } finally {
-      setLoading(false);
+    // Validate form data
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+      alert('Please fill in all fields');
+      return;
     }
+
+    // Create email body with form data
+    const emailBody = `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Interested in: ${formData.interest}
+
+Message:
+${formData.message}
+
+---
+This inquiry was sent from KAF Groups website inquiry form.`;
+
+    const subject = `New Inquiry from ${formData.name} - ${formData.interest}`;
+
+    // Create mailto link with pre-filled data
+    const mailtoLink = `mailto:${KAF_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+
+    // Open email client
+    window.location.href = mailtoLink;
+
+    // Show success message
+    setSubmitted(true);
+    setFormData(defaultForm);
+
+    // Clear success message after 3 seconds
+    setTimeout(() => setSubmitted(false), 3000);
   };
 
   return (
     <form className="contact-panel" onSubmit={handleSubmit}>
       <h3>Connect with our supply team</h3>
-      <p>Send your requirements and we’ll respond within one business day.</p>
+      <p>Fill the form below and send directly from your email client.</p>
 
       <div className="form-group">
         <label htmlFor="name">Name</label>
@@ -93,12 +96,11 @@ export default function ContactForm() {
         <textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Share your order size or export inquiry" required />
       </div>
 
-      <button type="submit" className="button button-primary" disabled={loading}>
-        {loading ? 'Sending...' : 'Send inquiry'}
+      <button type="submit" className="button button-primary">
+        Send inquiry via Email
       </button>
 
-      {submitted && <p className="form-success">Thank you! We'll be in touch shortly.</p>}
-      {error && <p className="form-error">{error}</p>}
+      {submitted && <p className="form-success">Opening your email client with pre-filled details...</p>}
     </form>
   );
 }
